@@ -89,7 +89,7 @@ export default class Smooth {
   }
 
   calc(e) {
-    const delta = this.vars.direction == 'horizontal' ? e.deltaX : e.deltaY
+    const delta = this.vars.direction == 'horizontal' ? (e.deltaX + e.deltaY) : e.deltaY
     this.vars.target += delta * -1
     this.clampTarget()
   }

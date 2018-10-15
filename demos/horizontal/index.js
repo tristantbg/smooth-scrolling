@@ -1,5 +1,12 @@
 import Custom from './custom'
 
+var preventHistoryBack = function (e) {
+  e.preventDefault();  
+};
+
+window.addEventListener('wheel', preventHistoryBack, { passive: false });
+
+
 const scroll = new Custom({
     preload: false,
     native: false,

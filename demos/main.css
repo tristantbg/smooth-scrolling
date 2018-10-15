@@ -8,6 +8,10 @@ body {
   height: 100%;
 }
 
+.vs-section {
+  touch-action: manipulation;
+}
+
 .is-virtual-scroll {
   overflow: hidden;
 }

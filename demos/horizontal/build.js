@@ -138,6 +138,12 @@ var _custom2 = _interopRequireDefault(_custom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var preventHistoryBack = function preventHistoryBack(e) {
+    e.preventDefault();
+};
+
+window.addEventListener('wheel', preventHistoryBack, { passive: false });
+
 var scroll = new _custom2.default({
     preload: false,
     native: false,
@@ -280,7 +286,7 @@ var Smooth = function () {
   }, {
     key: 'calc',
     value: function calc(e) {
-      var delta = this.vars.direction == 'horizontal' ? e.deltaX : e.deltaY;
+      var delta = this.vars.direction == 'horizontal' ? e.deltaX + e.deltaY : e.deltaY;
       this.vars.target += delta * -1;
       this.clampTarget();
     }
